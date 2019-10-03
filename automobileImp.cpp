@@ -71,5 +71,5 @@ automobileType::automobileType(){
 //constructor that takes params 
 automobileType::automobileType(float odmtrToSet, float fuelToSet, float effoToSet, float maxFuelToSet){
   setProperties(odmtrToSet, fuelToSet, effoToSet,);
-  maxFuelToSet < 0 ? maxFuelToSet = 0 : maxFuel = maxFuelToSet; 
+  maxFuelToSet < 0 ? maxFuel = 0 : maxFuel = maxFuelToSet; 
 }
