@@ -39,7 +39,7 @@ class automobileType{
             Post Condition:
                 setProperties(0,0,0)
         */
-        automobileType(float, float, float);
+        automobileType(float, float, float, float);
         /*
             Constructor that takes parameters to initialize automobileType
             Post Concdtion:
@@ -50,4 +50,5 @@ class automobileType{
         float odemeter;
         float fuel;
         float efficiency; 
+        float maxFuel;
 };
