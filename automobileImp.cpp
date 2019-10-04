@@ -4,6 +4,7 @@
 */
 #include "automobile.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -11,8 +12,11 @@ void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effo
     const int minThres = 0; 
       //check if all 3 are less than 0. If not then we set them to param value 
     odmtrToSet < minThres ? odemeter=0 : odemeter=odmtrToSet; 
-    fuelToSet < minThres ? fuel=0 : fuel=fuelToSet; 
     effoToSet < minThres ? efficiency=0 : efficiency=effoToSet;
+
+    if((fuelToSet > maxFuel) || (fuelToSet < minThres)){
+      cout << "Not a valid fueling option..." << endl;
+    }
 }
 
 string automobileType::getInfoString() const{
