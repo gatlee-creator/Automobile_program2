@@ -10,9 +10,15 @@ using namespace std;
 
 void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effoToSet){
     const int minThres = 0; 
-      //check if all 3 are less than 0. If not then we set them to param value 
-    odmtrToSet < minThres ? odemeter=0 : odemeter=odmtrToSet; 
     
+      //ODETMETER HASENT BEEN SET YET. THATS WHY. 
+    if((odmtrToSet > odemeter) || (odmtrToSet < minThres)){ //condtional error here.
+      cout << "not an valid odemeter option..." << endl;
+    }
+    else{
+
+    }
+
     if(effoToSet < 1){
       efficiency = 1; 
     } else{
@@ -21,6 +27,9 @@ void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effo
 
     if((fuelToSet > maxFuel) || (fuelToSet < minThres)){
       cout << fuelToSet << " is Not a valid fueling option..." << endl;
+      cout << "The max fueling limit is " << maxFuel << endl; 
+    } else {
+      fuel = fuelToSet;
     }
 }
 
@@ -79,6 +88,6 @@ automobileType::automobileType(){
 
 //constructor that takes params 
 automobileType::automobileType(float odmtrToSet, float fuelToSet, float effoToSet, float maxFuelToSet){
+  maxFuelToSet < 1 ? maxFuel = 1 : maxFuel = maxFuelToSet; //set this first
   setProperties(odmtrToSet, fuelToSet, effoToSet);
-  maxFuelToSet < 1 ? maxFuel = 1 : maxFuel = maxFuelToSet; 
 }
