@@ -10,14 +10,22 @@ using namespace std;
 
 void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effoToSet){
     const int minThres = 0; 
-    
+
       //ODETMETER HASENT BEEN SET YET. THATS WHY. 
-    if((odmtrToSet > odemeter) || (odmtrToSet < minThres)){ //condtional error here.
+      odemeter = odmtrToSet; //THIS IS GOING TO CAUSE PROBELMS
+    if(odmtrToSet > odemeter){ //condtional error here.
       cout << "not an valid odemeter option..." << endl;
+    } 
+    else if(odmtrToSet < 0)
+    {
+      cout << "not an valid odemeter option..." << endl;
+      odemeter = 0;     
     }
     else{
-
+      odemeter = odmtrToSet;
     }
+    
+   
 
     if(effoToSet < 1){
       efficiency = 1; 
