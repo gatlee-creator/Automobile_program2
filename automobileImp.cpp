@@ -12,7 +12,12 @@ void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effo
     const int minThres = 0; 
       //check if all 3 are less than 0. If not then we set them to param value 
     odmtrToSet < minThres ? odemeter=0 : odemeter=odmtrToSet; 
-    effoToSet < minThres ? efficiency=0 : efficiency=effoToSet;
+    
+    if(effoToSet < 1){
+      efficiency = 1; 
+    } else{
+      efficiency = effoToSet; 
+    }
 
     if((fuelToSet > maxFuel) || (fuelToSet < minThres)){
       cout << fuelToSet << " is Not a valid fueling option..." << endl;

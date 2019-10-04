@@ -16,8 +16,8 @@ using namespace std;
 
 int main()
 {
-    automobileType car(3000, -45, 30.5, 2400); 
-    
+    automobileType car(3000, -45, 0, 2400); 
+    cout << car.getInfoString() << endl; 
 
     return 0;
 }
