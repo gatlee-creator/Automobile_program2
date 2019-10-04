@@ -15,7 +15,7 @@ void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effo
     effoToSet < minThres ? efficiency=0 : efficiency=effoToSet;
 
     if((fuelToSet > maxFuel) || (fuelToSet < minThres)){
-      cout << "Not a valid fueling option..." << endl;
+      cout << fuelToSet << " is Not a valid fueling option..." << endl;
     }
 }
 
@@ -74,6 +74,6 @@ automobileType::automobileType(){
 
 //constructor that takes params 
 automobileType::automobileType(float odmtrToSet, float fuelToSet, float effoToSet, float maxFuelToSet){
-  setProperties(odmtrToSet, fuelToSet, effoToSet,);
+  setProperties(odmtrToSet, fuelToSet, effoToSet);
   maxFuelToSet < 1 ? maxFuel = 1 : maxFuel = maxFuelToSet; 
 }
