@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void automobileType::setProperties(float odmtrToSet, float fuelToSet, float effoToSet){
+void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
 
 
 }
@@ -68,7 +68,7 @@ automobileType::automobileType(){
 }
 
 //constructor that takes params 
-automobileType::automobileType(float odmtrToSet, float fuelToSet, float effoToSet, float maxFuelToSet){
+automobileType::automobileType(float odmtrInput, float fuelInput, float effoInput, float maxFuelInput){
 
 
 }
