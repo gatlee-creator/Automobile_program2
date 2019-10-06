@@ -20,9 +20,14 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     cerr << "Invalid efficiency input" << endl;
     return; 
   }
-  else if(odmtrInput > odemeter){ //check odemeter 
+  else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Invalid odemeter input" << endl;
     return; 
+  }
+  else{ //if all are valid then we can set them 
+    fuel = fuelInput;
+    efficiency = effoInput; 
+    odemeter = odmtrInput; 
   }
 
 }
@@ -88,12 +93,6 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
     maxFuel = maxFuelInput;
   } else {
     maxFuel = 1; 
-  }
-  //we also have to set odemeter since this is first time call
-  if(odmtrInput > 0){
-    odemeter = odmtrInput;
-  } else {
-    odemeter = 0; 
   }
 
   //now we can call setproperties 

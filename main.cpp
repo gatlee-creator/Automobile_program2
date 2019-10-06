@@ -16,8 +16,14 @@ using namespace std;
 
 int main()
 {
-    automobileType car(2500, 30, -2, 40); 
+    automobileType car(2500, 30, 25.2, 40); 
 
+    cout << "All values should be set:" << endl;
+    cout << car.getInfoString() << endl;
+
+    cout << "Values should not change due to invalid odemeter input" << endl;
+    car.setProperties(2400, 30, 25.2); 
+    cout << car.getInfoString() << endl; 
 
     return 0;
 }
