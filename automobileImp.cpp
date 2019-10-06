@@ -92,6 +92,7 @@ automobileType::automobileType(){
   odemeter = 0;
   fuel = 0;
   efficiency = 0;
+  maxFuel = 1; 
 }
 
 //constructor that takes params 
