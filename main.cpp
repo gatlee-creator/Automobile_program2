@@ -16,7 +16,8 @@ using namespace std;
 
 int main()
 {
-    automobileType car(2500, 30, 25.2, 30); 
+    automobileType car(2500, 30, -2, 40); 
+
 
     return 0;
 }

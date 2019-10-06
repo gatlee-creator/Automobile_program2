@@ -10,9 +10,19 @@ using namespace std;
 
 void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
   //lets do a cascade of condtions to make sure we have valid values. 
+
+    //check the fuel input 
   if((fuelInput > maxFuel) || (fuelInput < 0)){
     cerr << "Invalid fuel input" << endl;
     return; //exit the function 
+  }
+  else if(effoInput < 1){ //check efficieny input
+    cerr << "Invalid efficiency input" << endl;
+    return; 
+  }
+  else if(odmtrInput > odemeter){ //check odemeter 
+    cerr << "Invalid odemeter input" << endl;
+    return; 
   }
 
 }
@@ -77,7 +87,13 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
   if(maxFuelInput > 0){
     maxFuel = maxFuelInput;
   } else {
-    maxFuelInput = 1; 
+    maxFuel = 1; 
+  }
+  //we also have to set odemeter since this is first time call
+  if(odmtrInput > 0){
+    odemeter = odmtrInput;
+  } else {
+    odemeter = 0; 
   }
 
   //now we can call setproperties 
