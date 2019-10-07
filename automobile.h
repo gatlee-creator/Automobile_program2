@@ -6,6 +6,13 @@
 
 class automobileType{
     public:
+
+        const float DEFAULT_FUEL_LEVEL =  15; 
+        const float DEFAULT_MAX_FUEL = 20; 
+        const float DEFAULT_ODEMETER = 0;
+        const float DEFAULT_EFFICIENY = 30; 
+
+
         void setProperties(float, float, float);
         /*
             Function takes 3 parameters to set the odemeter, fuel, and effiency.
