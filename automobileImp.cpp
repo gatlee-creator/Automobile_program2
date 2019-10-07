@@ -80,10 +80,10 @@ void automobileType::drive(float milesTrav){
 
 //default constructor
 automobileType::automobileType(){
-  odemeter = 0;
-  fuel = 0;
-  efficiency = 0;
-  maxFuel = 1; 
+  odemeter = DEFAULT_ODEMETER;
+  fuel = DEFAULT_FUEL_LEVEL;
+  efficiency = DEFAULT_EFFICIENY;
+  maxFuel = DEFAULT_MAX_FUEL; 
 }
 
 //constructor that takes params 
