@@ -25,5 +25,10 @@ int main()
     car.setProperties(2400, 30, 25.2); 
     cout << car.getInfoString() << endl; 
 
+    cout << "Car 2 being created with default values" << endl;
+    automobileType car2; 
+    cout << car2.getInfoString() << endl;
+
+
     return 0;
 }
