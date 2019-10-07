@@ -92,7 +92,9 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
   if(maxFuelInput > 0){
     maxFuel = maxFuelInput;
   } else {
+    cerr << "Invalid max fuel value" << endl;
     maxFuel = DEFAULT_MAX_FUEL; 
+    cerr << "Max fuel set to 20 by default" << endl; 
   }
 
   //now we can call setproperties 
