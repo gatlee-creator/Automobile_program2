@@ -16,24 +16,24 @@ using namespace std;
 
 int main()
 {
+    
+    cout << "CAR 1 : all values being set in constructor:" << endl;
     automobileType car(2500, 30, 25.2, 40); 
-
-    cout << "Car 1 with all values being set in constructor:" << endl;
     cout << car.getInfoString() << endl;
 
-    cout << "Values should not change due to invalid odemeter input" << endl;
+    cout << "CAR 1: Values should not change due to invalid odemeter input" << endl;
     car.setProperties(2400, 30, 25.2); 
     cout << car.getInfoString() << endl; 
 
-    cout << "Car 2 being created with default values" << endl;
+    cout << "CAR 2: created with default constructor values" << endl;
     automobileType car2; 
     cout << car2.getInfoString() << endl;
 
-    cout << "Car 3 being created with invalid max fuel below 0. "
+    cout << "CAR 3: created with invalid max fuel below 0. "
          << "Will be defaulted to 20" << endl;
     automobileType car3(3000, 30, 33.3, -33); 
 
-    cout << "Attempting to change car 3 fuel level above max fuel" << endl;
+    cout << "CAR 3: changing fuel level above max fuel" << endl;
     car3.setProperties(3000, 25, 33.3);
 
     cout << "CAR 2: setting the efficieny below 1" << endl;
