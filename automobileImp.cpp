@@ -26,6 +26,8 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
   }
   else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Invalid odemeter input" << endl;
+    odemeter = DEFAULT_ODEMETER;
+    cerr << "Odemeter set to 0 by default" << endl;
     return; 
   }
   else{ //if all are valid then we can set them 

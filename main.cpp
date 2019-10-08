@@ -39,6 +39,8 @@ int main()
     cout << "CAR 2: setting the efficieny below 1" << endl;
     car2.setProperties(0, 15, 0);
 
+    cout << "CAR 3: setting the odemeter below 3000" << endl;
+    car3.setProperties(2900, 15, 33.3); 
 
     return 0;
 }
