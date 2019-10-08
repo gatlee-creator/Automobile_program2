@@ -33,6 +33,11 @@ int main()
          << "Will be defaulted to 20" << endl;
     automobileType car3(3000, 30, 33.3, -33); 
 
+    cout << "Attempting to change car 3 fuel level above max fuel" << endl;
+    car3.setProperties(3000, 25, 33.3);
+     
+
+
 
     return 0;
 }

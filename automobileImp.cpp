@@ -14,6 +14,8 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     //check the fuel input 
   if((fuelInput > maxFuel) || (fuelInput < 0)){
     cerr << "Invalid fuel input" << endl;
+    fuel = DEFAULT_FUEL_LEVEL; 
+    cerr << "Fuel level set to 15 by default" << endl;
     return; //exit the function 
   }
   else if(effoInput < 1){ //check efficieny input
