@@ -20,6 +20,8 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
   }
   else if(effoInput < 1){ //check efficieny input
     cerr << "Invalid efficiency input" << endl;
+    efficiency = DEFAULT_EFFICIENY; 
+    cerr << "Efficiency set to 30 by default" << endl; 
     return; 
   }
   else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 

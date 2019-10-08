@@ -35,8 +35,9 @@ int main()
 
     cout << "Attempting to change car 3 fuel level above max fuel" << endl;
     car3.setProperties(3000, 25, 33.3);
-     
 
+    cout << "CAR 2: setting the efficieny below 1" << endl;
+    car2.setProperties(0, 15, 0);
 
 
     return 0;
