@@ -14,22 +14,24 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     //check the fuel input 
   if((fuelInput > maxFuel) || (fuelInput < 0)){
     //make sure to state range of acceptable values
-    cerr << "Invalid fuel input" << endl;
+    cerr << "Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
     fuel = DEFAULT_FUEL_LEVEL; 
     cerr << "Fuel level set to 15 by default" << endl;
-    //state that no other values have been set 
+    cerr << "No other values have been set." << endl; 
     return; //exit the function 
   }
   else if(effoInput < 1){ //check efficieny input
-    cerr << "Invalid efficiency input" << endl;
+    cerr << "Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
     cerr << "Efficiency set to 30 by default" << endl; 
+    cerr << "No other values have been set." << endl; 
     return; 
   }
   else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
-    cerr << "Invalid odemeter input" << endl;
+    cerr << "Invalid odemeter input." << endl;
     odemeter = DEFAULT_ODEMETER;
     cerr << "Odemeter set to 0 by default" << endl;
+    cerr << "No other values have been set." << endl; 
     return; 
   }
   else{ //if all are valid then we can set them 
