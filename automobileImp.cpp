@@ -22,19 +22,25 @@ void automobileType::setFuelLevel(float fuelInput){
   }
 }
 
-void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
-  //lets do a cascade of condtions to make sure we have valid values. 
-
-  setFuelLevel(fuelInput);
-
+void automobileType::setEfficiency(float effoInput){
   if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
     cerr << "RES: Efficiency set to 30 by default."; 
     cerr << " No other values have been set." << endl; 
     return; 
+  } else {
+    efficiency = effoInput; 
   }
-  else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
+}
+
+void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
+  //lets do a cascade of condtions to make sure we have valid values. 
+
+  setFuelLevel(fuelInput);
+  setEfficiency(effoInput);
+
+  if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Error: Invalid odemeter input. Permitted range: > 0 and < current odemeter" << endl;
     odemeter = DEFAULT_ODEMETER;
     cerr << "RES: Odemeter set to 0 by default.";
@@ -42,7 +48,6 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     return; 
   }
   else{ //if all are valid then we can set them 
-    efficiency = effoInput; 
     odemeter = odmtrInput; 
   }
 
