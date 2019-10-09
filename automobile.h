@@ -55,8 +55,10 @@ class automobileType{
             nor lower than the current value.
             Post Condition:
                 odemeter = odmtrInput
-            If the arguement passed in violates any of the conditions then -1 is returned.
+            If the arguement passed in violates any of the conditions then -1 is returned
+            and a default value is set to odemeter.
             Post Condition:
+                odemeter = DEFAULT_ODEMETER
                 return -1 
 
         */
@@ -67,8 +69,10 @@ class automobileType{
             the tank's max capacity and is not a negative input value. 
             Post Condition:
                 fuel = fuelInput
-            If the arguement passed in violates any of the conditions then -1 is returned.
+            If the arguement passed in violates any of the conditions then -1 is returned
+            and a default value is set to fuel.
             Post Condition:
+                fuel = DEFAULT_FUEL_LEVEL
                 return -1 
         
         */
@@ -79,8 +83,10 @@ class automobileType{
             below 1.
             Post Condition:
                 efficiency = effoInput
-            If the arguement passed in violates any of the conditions then -1 is returned.
+            If the arguement passed in violates any of the conditions then -1 is returned
+            and a default value is set to efficiency. 
             Post Condition:
+                efficiency = DEFAULT_EFFICIENY
                 return -1 
         */
         
