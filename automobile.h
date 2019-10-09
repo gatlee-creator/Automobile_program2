@@ -48,7 +48,7 @@ class automobileType{
             Post Condition:
                 return efficiency 
         */
-        void setOdemeter(float);\
+        int setOdemeter(float);\
         /*
             Function takes a float arguement and uses it to set the odemeter
             Conditionals are in place to make sure the odemeter is neither negative
@@ -57,7 +57,7 @@ class automobileType{
                 odemeter = odmtrInput
 
         */
-        void setFuelLevel(float);
+        int setFuelLevel(float);
         /*
             Function takes a float arguement and uses it to set the fuel level.
             Conditionals are in place to make sure the fuel level doesn't exceed 
@@ -66,7 +66,7 @@ class automobileType{
                 fuel = fuelInput
         
         */
-        void setEfficiency(float); 
+        int setEfficiency(float); 
         /*
             Function takes a float arguement and uses it to to set the efficiency. 
             Conditionals are in place to make sure the efficiency is never set 

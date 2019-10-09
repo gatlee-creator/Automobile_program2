@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void automobileType::setFuelLevel(float fuelInput){
+int automobileType::setFuelLevel(float fuelInput){
   //check the fuel input 
   if((fuelInput > maxFuel) || (fuelInput < 0)){
     //make sure to state range of acceptable values
@@ -16,31 +16,31 @@ void automobileType::setFuelLevel(float fuelInput){
     fuel = DEFAULT_FUEL_LEVEL; 
     cerr << "RES: Fuel level set to 15 by default. " << endl;
     // cerr << "No other values have been set." << endl; 
-    return; //exit the function 
+    return -1; //exit the function 
   } else{
     fuel = fuelInput; 
   }
 }
 
-void automobileType::setEfficiency(float effoInput){
+int automobileType::setEfficiency(float effoInput){
   if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
     cerr << "RES: Efficiency set to 30 by default."<< endl; 
     // cerr << " No other values have been set." << endl; 
-    return; 
+    return -1; 
   } else {
     efficiency = effoInput; 
   }
 }
 
-void automobileType::setOdemeter(float odmtrInput){
+int automobileType::setOdemeter(float odmtrInput){
   if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
     odemeter = DEFAULT_ODEMETER;
     cerr << "RES: Odemeter set to 0 by default."<< endl;
     // cerr << " No other values have been set." << endl; 
-    return; 
+    return -1; 
   }
   else{ 
     odemeter = odmtrInput; 
