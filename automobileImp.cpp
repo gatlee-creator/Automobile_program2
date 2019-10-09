@@ -73,6 +73,18 @@ string automobileType::getInfoString() const{
     return automobileStatus;
 }
 
+float automobileType::getOdemeter(){
+  return odemeter; 
+}
+
+float automobileType::getFuelLevel(){
+  return fuel;
+}
+
+float automobileType::getEfficiency(){
+  return efficiency; 
+}
+
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
 

@@ -30,6 +30,24 @@ class automobileType{
             Post Condition:
                 "Miles = odemeter, Fuel = fuelLevel, efficieny = effo"
         */
+        float getOdemeter();
+        /*
+            Function that returns the current odemeter value 
+            Post Condition:
+                return odemeter
+        */
+        float getFuelLevel();
+        /*
+            Function that returns the current fuel level
+            Post Condition:
+                return fuel
+        */
+        float getEfficiency(); 
+        /*
+            Function that returns the current efficiency 
+            Post Condition:
+                return efficiency 
+        */
         void drive(float);
         /*
             Function takes a parameter for amount of miles the car has driven.
