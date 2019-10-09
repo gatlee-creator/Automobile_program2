@@ -8,19 +8,26 @@
 
 using namespace std;
 
+void automobileType::setOdemeter(float odmtrInput){
+  if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
+    cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
+    odemeter = DEFAULT_ODEMETER;
+    cerr << "RES: Odemeter set to 0 by default.";
+    cerr << " No other values have been set." << endl; 
+    return; 
+  }
+  else{
+    odemeter = odmtrInput; 
+  }
+}
+
 void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
   //lets do a cascade of condtions to make sure we have valid values. 
 
     //check the fuel input 
-  if((fuelInput > maxFuel) || (fuelInput < 0)){
-    //make sure to state range of acceptable values
-    cerr << "Error: Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
-    fuel = DEFAULT_FUEL_LEVEL; 
-    cerr << "RES: Fuel level set to 15 by default. ";
-    cerr << "No other values have been set." << endl; 
-    return; //exit the function 
-  }
-  else if(effoInput < 1){ //check efficieny input
+  setOdemeter(odmtrInput);
+  
+  if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
     cerr << "RES: Efficiency set to 30 by default."; 
@@ -37,7 +44,6 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
   else{ //if all are valid then we can set them 
     fuel = fuelInput;
     efficiency = effoInput; 
-    odemeter = odmtrInput; 
   }
 
 }
@@ -84,6 +90,8 @@ float automobileType::getFuelLevel(){
 float automobileType::getEfficiency(){
   return efficiency; 
 }
+
+
 
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
