@@ -22,7 +22,7 @@ int main()
     automobileType car(2500, 30, 25.2, 40); 
     cout << car.getInfoString() << endl;
 
-    cout << "CAR 1: Values should not change due to invalid odemeter input" << endl;
+    cout << "CAR 1: attempting invalid odemeter input" << endl;
     car.setProperties(2400, 25, 25.2); 
     cout << car.getInfoString() << endl; 
 

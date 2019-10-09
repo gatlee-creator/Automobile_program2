@@ -14,8 +14,8 @@ void automobileType::setFuelLevel(float fuelInput){
     //make sure to state range of acceptable values
     cerr << "Error: Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
     fuel = DEFAULT_FUEL_LEVEL; 
-    cerr << "RES: Fuel level set to 15 by default. ";
-    cerr << "No other values have been set." << endl; 
+    cerr << "RES: Fuel level set to 15 by default. " << endl;
+    // cerr << "No other values have been set." << endl; 
     return; //exit the function 
   } else{
     fuel = fuelInput; 
@@ -26,8 +26,8 @@ void automobileType::setEfficiency(float effoInput){
   if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
-    cerr << "RES: Efficiency set to 30 by default."; 
-    cerr << " No other values have been set." << endl; 
+    cerr << "RES: Efficiency set to 30 by default."<< endl; 
+    // cerr << " No other values have been set." << endl; 
     return; 
   } else {
     efficiency = effoInput; 
@@ -38,11 +38,11 @@ void automobileType::setOdemeter(float odmtrInput){
   if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
     odemeter = DEFAULT_ODEMETER;
-    cerr << "RES: Odemeter set to 0 by default.";
-    cerr << " No other values have been set." << endl; 
+    cerr << "RES: Odemeter set to 0 by default."<< endl;
+    // cerr << " No other values have been set." << endl; 
     return; 
   }
-  else{ //if all are valid then we can set them 
+  else{ 
     odemeter = odmtrInput; 
   }
 }
