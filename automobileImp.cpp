@@ -28,7 +28,7 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     return; 
   }
   else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
-    cerr << "Invalid odemeter input." << endl;
+    cerr << "Invalid odemeter input. Permitted range: > 0 and < current odemeter" << endl;
     odemeter = DEFAULT_ODEMETER;
     cerr << "Odemeter set to 0 by default" << endl;
     cerr << "No other values have been set." << endl; 
@@ -44,13 +44,14 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
 
 string automobileType::getInfoString() const{
     string automobileStatus; 
-    string fuelToString, odmtrToString, effoToString;
+    string fuelToString, odmtrToString, effoToString, maxToString; 
     int pos; 
 
       //convert int members to strings
     odmtrToString = to_string((int)odemeter);
     fuelToString = to_string(fuel); 
     effoToString = to_string(efficiency);
+    maxToString = to_string(maxFuel);
 
     //now we want to modify strings length to show 2 decimal places
     pos = fuelToString.find_first_of(".");
@@ -58,12 +59,16 @@ string automobileType::getInfoString() const{
 
     pos = effoToString.find_first_of(".");
     effoToString = effoToString.erase(pos + 3, effoToString.length());
+
+    pos = maxToString.find_first_of(".");
+    maxToString = maxToString.erase(pos + 3, maxToString.length());
     
 
       //concat those strings into a larger string
-    automobileStatus = "Miles = " + odmtrToString +     " " + 
+    automobileStatus = "Miles = " + odmtrToString + " " + 
                        "Fuel = "  + fuelToString +  " " +
-                       "Efficiency = " + effoToString; 
+                       "Efficiency = " + effoToString + " " +
+                       "Max Capacity = " + maxToString; 
 
     return automobileStatus;
 }
