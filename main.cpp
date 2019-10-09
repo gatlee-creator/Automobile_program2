@@ -23,7 +23,7 @@ int main()
     cout << car.getInfoString() << endl;
 
     cout << "CAR 1: Values should not change due to invalid odemeter input" << endl;
-    car.setProperties(2400, 30, 25.2); 
+    car.setProperties(2400, 25, 25.2); 
     cout << car.getInfoString() << endl; 
 
     cout << "CAR 2: created with default constructor values" << endl;
