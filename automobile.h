@@ -48,7 +48,7 @@ class automobileType{
             Post Condition:
                 return efficiency 
         */
-        int setOdemeter(float);\
+        int setOdemeter(float);
         /*
             Function takes a float arguement and uses it to set the odemeter
             Conditionals are in place to make sure the odemeter is neither negative
@@ -89,6 +89,7 @@ class automobileType{
                 efficiency = DEFAULT_EFFICIENY
                 return -1 
         */
+        void refillTank(float);
         
         void drive(float);
         /*
