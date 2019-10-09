@@ -8,25 +8,25 @@
 
 using namespace std;
 
-void automobileType::setOdemeter(float odmtrInput){
-  if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
-    cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
-    odemeter = DEFAULT_ODEMETER;
-    cerr << "RES: Odemeter set to 0 by default.";
-    cerr << " No other values have been set." << endl; 
-    return; 
-  }
-  else{
-    odemeter = odmtrInput; 
+void automobileType::setFuelLevel(float fuelInput){
+  //check the fuel input 
+  if((fuelInput > maxFuel) || (fuelInput < 0)){
+    //make sure to state range of acceptable values
+    cerr << "Error: Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
+    fuel = DEFAULT_FUEL_LEVEL; 
+    cerr << "RES: Fuel level set to 15 by default. ";
+    cerr << "No other values have been set." << endl; 
+    return; //exit the function 
+  } else{
+    fuel = fuelInput; 
   }
 }
 
 void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
   //lets do a cascade of condtions to make sure we have valid values. 
 
-    //check the fuel input 
-  setOdemeter(odmtrInput);
-  
+  setFuelLevel(fuelInput);
+
   if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
@@ -42,8 +42,8 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     return; 
   }
   else{ //if all are valid then we can set them 
-    fuel = fuelInput;
     efficiency = effoInput; 
+    odemeter = odmtrInput; 
   }
 
 }
@@ -91,7 +91,18 @@ float automobileType::getEfficiency(){
   return efficiency; 
 }
 
-
+void automobileType::setOdemeter(float odmtrInput){
+  if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
+    cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
+    odemeter = DEFAULT_ODEMETER;
+    cerr << "RES: Odemeter set to 0 by default.";
+    cerr << " No other values have been set." << endl; 
+    return; 
+  }
+  else{
+    odemeter = odmtrInput; 
+  }
+}
 
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
