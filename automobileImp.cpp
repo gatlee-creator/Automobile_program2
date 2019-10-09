@@ -16,22 +16,22 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
     //make sure to state range of acceptable values
     cerr << "Error: Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
     fuel = DEFAULT_FUEL_LEVEL; 
-    cerr << "Fuel level set to 15 by default" << endl;
+    cerr << "RES: Fuel level set to 15 by default. ";
     cerr << "No other values have been set." << endl; 
     return; //exit the function 
   }
   else if(effoInput < 1){ //check efficieny input
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
     efficiency = DEFAULT_EFFICIENY; 
-    cerr << "Efficiency set to 30 by default" << endl; 
-    cerr << "No other values have been set." << endl; 
+    cerr << "RES: Efficiency set to 30 by default."; 
+    cerr << " No other values have been set." << endl; 
     return; 
   }
   else if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
     cerr << "Error: Invalid odemeter input. Permitted range: > 0 and < current odemeter" << endl;
     odemeter = DEFAULT_ODEMETER;
-    cerr << "Odemeter set to 0 by default" << endl;
-    cerr << "No other values have been set." << endl; 
+    cerr << "RES: Odemeter set to 0 by default.";
+    cerr << " No other values have been set." << endl; 
     return; 
   }
   else{ //if all are valid then we can set them 
@@ -121,7 +121,7 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
   } else {
     cerr << "Error: Invalid max fuel value" << endl;
     maxFuel = DEFAULT_MAX_FUEL; 
-    cerr << "Max fuel set to 20 by default" << endl; 
+    cerr << "RES: Max fuel set to 20 by default" << endl; 
   }
 
   //now we can call setproperties 
