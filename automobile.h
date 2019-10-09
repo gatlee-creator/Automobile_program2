@@ -48,6 +48,10 @@ class automobileType{
             Post Condition:
                 return efficiency 
         */
+        void setOdemeter(float);
+        void setFuelLevel(float);
+        void setEfficiency(float); 
+        
         void drive(float);
         /*
             Function takes a parameter for amount of miles the car has driven.

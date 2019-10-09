@@ -16,7 +16,8 @@ using namespace std;
 
 int main()
 {
-    
+    float temp; 
+
     cout << "CAR 1 : all values being set in constructor:" << endl;
     automobileType car(2500, 30, 25.2, 40); 
     cout << car.getInfoString() << endl;
@@ -41,10 +42,19 @@ int main()
 
     cout << "CAR 3: setting all to valid values" << endl;
     car3.setProperties(3000, 15, 33.3); 
-    cout << car3.getInfoString() << endl;
+    cout << car3.getInfoString() << endl; //Efficiency producing 32.29?
 
     cout << "CAR 3: setting the odemeter below 3000" << endl;
     car3.setProperties(2900, 15, 33.3); 
+
+    cout << "CAR 3: calling getOdemeter" << endl;
+    cout << "Odemeter = " << car3.getOdemeter() << endl; 
+
+    cout << "CAR 3: calling getFuel" << endl;
+    cout << "Fuel = " << car3.getFuelLevel() << endl;
+
+    cout << "CAR 3: calling getEfficiency " << endl;
+    cout << "Efficiency = " << car3.getEfficiency() << endl;
 
     return 0;
 }
