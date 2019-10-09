@@ -19,6 +19,7 @@ int automobileType::setFuelLevel(float fuelInput){
     return -1; //exit the function 
   } else{
     fuel = fuelInput; 
+    return 0; 
   }
 }
 
@@ -30,7 +31,8 @@ int automobileType::setEfficiency(float effoInput){
     // cerr << " No other values have been set." << endl; 
     return -1; 
   } else {
-    efficiency = effoInput; 
+    efficiency = effoInput;
+    return 0;  
   }
 }
 
@@ -44,13 +46,14 @@ int automobileType::setOdemeter(float odmtrInput){
   }
   else{ 
     odemeter = odmtrInput; 
+    return 0; 
   }
 }
 
 void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
+  setOdemeter(odmtrInput);
   setFuelLevel(fuelInput);
   setEfficiency(effoInput);
-  setOdemeter(odmtrInput);  
 }
 
 string automobileType::getInfoString() const{
