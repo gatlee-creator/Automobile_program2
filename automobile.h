@@ -55,6 +55,9 @@ class automobileType{
             nor lower than the current value.
             Post Condition:
                 odemeter = odmtrInput
+            If the arguement passed in violates any of the conditions then -1 is returned.
+            Post Condition:
+                return -1 
 
         */
         int setFuelLevel(float);
@@ -64,6 +67,9 @@ class automobileType{
             the tank's max capacity and is not a negative input value. 
             Post Condition:
                 fuel = fuelInput
+            If the arguement passed in violates any of the conditions then -1 is returned.
+            Post Condition:
+                return -1 
         
         */
         int setEfficiency(float); 
@@ -73,7 +79,9 @@ class automobileType{
             below 1.
             Post Condition:
                 efficiency = effoInput
-        
+            If the arguement passed in violates any of the conditions then -1 is returned.
+            Post Condition:
+                return -1 
         */
         
         void drive(float);
