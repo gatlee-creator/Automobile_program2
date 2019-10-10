@@ -119,6 +119,7 @@ void automobileType::drive(float milesTrav){
       //first do a 0 miles check
     if(milesTrav <= 0)
         return; 
+    //if fuel <= 0 then just exit immeaditley 
     
      //do a formula to figure how many gallons we used 
      gallonsUsed = (1 / efficiency) * milesTrav; 
@@ -134,7 +135,8 @@ void automobileType::drive(float milesTrav){
     else {
       fuel -= gallonsUsed; //subtract gallons used from our fuel
     }
-    if((odemeter + milesTrav) > possibleDist){
+    //cout << odemeter + milesTrav << endl;
+    if((milesTrav) > possibleDist){ 
       odemeter += possibleDist; 
     }
     else{
