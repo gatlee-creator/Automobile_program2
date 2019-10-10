@@ -123,10 +123,13 @@ void automobileType::drive(float milesTrav){
      gallonsUsed = (1 / efficiency) * milesTrav; 
 
       //if the fuel level goes below 0 then we're out of gas 
-    if((fuel - gallonsUsed) <= 0)
-        fuel = 0;
-    else
-        fuel -= gallonsUsed; //subtract gallons used from our fuel
+    if((fuel - gallonsUsed) <= 0){
+      cerr << "Error: Out of gas. Refill tank" << endl;
+      fuel = 0; 
+    }
+    else {
+      fuel -= gallonsUsed; //subtract gallons used from our fuel
+    }
 
     odemeter += milesTrav; //add this vechile has traveled to the odemeter
  
