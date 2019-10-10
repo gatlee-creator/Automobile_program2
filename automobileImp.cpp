@@ -54,26 +54,28 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
   int FLAGS[3];
   const int INVALID = -1; 
 
-  if((odmtrInput < odemeter) || (odmtrInput < 0)){
+   //use a small cascade of conditonals to check if valid inputs
+  if(odmtrInput < odemeter){
     FLAGS[0] = INVALID;
-    cerr << "Error: invalid odemeter input."
+    cerr << "Error: invalid odemeter input. "
          << "Permitted range: >= 0 or < current odemeter" << endl;
   }
-  else if((fuelInput > maxFuel) || (fuelInput < 0)){
+  if((fuelInput > maxFuel) || (fuelInput < 0)){
     FLAGS[1] = INVALID; 
-    cerr << "Error: invalid fuel input." 
+    cerr << "Error: invalid fuel input. " 
          << "Permitted range: >= 0 or < " << maxFuel << endl;
   }
-  else if(effoInput < 1){
+  if(effoInput < 1){
     FLAGS[2] = INVALID;
-    cerr << "Error: invalid efficiency input."
+    cerr << "Error: invalid efficiency input. "
          << "Permitted range: > 0" << endl;
   }
 
+   //if none are valid then none will be set 
   if((FLAGS[0] == INVALID) || (FLAGS[1] == INVALID) || (FLAGS[2] == INVALID)){
     cerr << "Res: No other values have been set" << endl;
     return; 
-  } else {
+  } else { //if all are valid then we can set them
     odemeter = odmtrInput;
     fuel = fuelInput;
     efficiency = effoInput;
@@ -191,7 +193,7 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
   }
 
   //now we can call setproperties 
-  setProperties(odmtrInput, fuelInput, effoInput);
+  //setProperties(odmtrInput, fuelInput, effoInput);
 
 
 }
