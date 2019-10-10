@@ -35,6 +35,12 @@ int main(){
     cout << "> setting the odemeter to 2400 (below the current value). " 
         <<  "Should get error warning" << endl;
     car2.setOdemeter(2400);
+    cout << endl;
+
+    cout << "CAR 3: created with parameterized constructor." << endl;
+    automobileType car3(6000, 20, 10, 20); 
+    cout << "CAR 3: car3 will mainly be testing the drive and refill functions" << endl;
+    
 
     return 0;
 }
