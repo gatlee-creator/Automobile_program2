@@ -9,39 +9,33 @@
 using namespace std;
 
 int automobileType::setFuelLevel(float fuelInput){
-  //check the fuel input 
+   //check if fuel input is in acceptable values
   if((fuelInput > maxFuel) || (fuelInput < 0)){
-    //make sure to state range of acceptable values
     cerr << "Error: Invalid fuel input. Permitted Range: 0-" << maxFuel << endl;
-    fuel = DEFAULT_FUEL_LEVEL; 
-    cerr << "RES: Fuel level set to 15 by default. " << endl;
-    // cerr << "No other values have been set." << endl; 
     return -1; //exit the function 
-  } else{
-    fuel = fuelInput; 
-    return 0; 
+  } 
+  else{
+    fuel = fuelInput; //set fuel
+    return 0; //all good
   }
 }
 
 int automobileType::setEfficiency(float effoInput){
-  if(effoInput < 1){ //check efficieny input
+  //check efficiency input is in range of acceptable values
+  if(effoInput < 1){ 
     cerr << "Error: Invalid efficiency input. Permitted Range: > 1" << endl;
-    efficiency = DEFAULT_EFFICIENY; 
-    cerr << "RES: Efficiency set to 30 by default."<< endl; 
-    // cerr << " No other values have been set." << endl; 
     return -1; 
-  } else {
+  } 
+  else {
     efficiency = effoInput;
     return 0;  
   }
 }
 
 int automobileType::setOdemeter(float odmtrInput){
-  if((odmtrInput < odemeter) || (odmtrInput < 0)){ //check odemeter 
+  //check odemeter input is in range of acceptable values 
+  if((odmtrInput < odemeter) || (odmtrInput < 0)){ 
     cerr << "Error: Invalid odemeter input. Permitted range: > 0 or > current odemeter" << endl;
-    odemeter = DEFAULT_ODEMETER;
-    cerr << "RES: Odemeter set to 0 by default."<< endl;
-    // cerr << " No other values have been set." << endl; 
     return -1; 
   }
   else{ 
@@ -183,6 +177,8 @@ automobileType::automobileType(){
 
 //constructor that takes params 
 automobileType::automobileType(float odmtrInput, float fuelInput, float effoInput, float maxFuelInput){
+  const int INVALID = -1;
+ 
   //first we want to set the maxFuel && do prelimary check
   if(maxFuelInput > 0){
     maxFuel = maxFuelInput;
@@ -192,8 +188,20 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
     cerr << "RES: Max fuel set to 20 by default" << endl; 
   }
 
-  //now we can call setproperties 
-  //setProperties(odmtrInput, fuelInput, effoInput);
+   //call setFuel. If invalid set it to default
+  if(setFuelLevel(fuelInput) == INVALID){
+    fuel = DEFAULT_FUEL_LEVEL; 
+    cerr << "RES: Fuel level set to 15 by default. " << endl;
+  }
 
+  if(setOdemeter(odmtrInput) == INVALID){
+    odemeter = DEFAULT_ODEMETER;
+    cerr << "RES: Odemeter set to 0 by default."<< endl;
+  }
+
+  if(setEfficiency(effoInput) == INVALID){
+    efficiency = DEFAULT_EFFICIENY; 
+    cerr << "RES: Efficiency set to 30 by default."<< endl; 
+  }
 
 }
