@@ -185,23 +185,23 @@ automobileType::automobileType(float odmtrInput, float fuelInput, float effoInpu
   } else {
     cerr << "Error: Invalid max fuel value" << endl;
     maxFuel = DEFAULT_MAX_FUEL; 
-    cerr << "RES: Max fuel set to 20 by default" << endl; 
+    cerr << "Res: Max fuel set to 20 by default" << endl; 
   }
 
    //call setFuel. If invalid set it to default
   if(setFuelLevel(fuelInput) == INVALID){
     fuel = DEFAULT_FUEL_LEVEL; 
-    cerr << "RES: Fuel level set to 15 by default. " << endl;
+    cerr << "Res: Fuel level set to 15 by default. " << endl;
   }
 
   if(setOdemeter(odmtrInput) == INVALID){
     odemeter = DEFAULT_ODEMETER;
-    cerr << "RES: Odemeter set to 0 by default."<< endl;
+    cerr << "Res: Odemeter set to 0 by default."<< endl;
   }
 
   if(setEfficiency(effoInput) == INVALID){
     efficiency = DEFAULT_EFFICIENY; 
-    cerr << "RES: Efficiency set to 30 by default."<< endl; 
+    cerr << "Res: Efficiency set to 30 by default."<< endl; 
   }
 
 }

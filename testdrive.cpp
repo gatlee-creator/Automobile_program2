@@ -25,6 +25,16 @@ int main(){
          << "Should be set to a default of 30" << endl;
     automobileType car2(2500, 12, -20, 40);
     cout << car2.getInfoString() << endl; 
+    cout << "CAR 2: car2 will be testing all of the seperate setFunctions" << endl;
+    cout << "> setting fuelLevel to 20." << endl;
+    car2.setFuelLevel(20);
+    cout << car2.getInfoString() << endl;
+    cout << "> setting efficiency to 40." << endl;
+    car2.setEfficiency(40);
+    cout << car2.getInfoString() << endl;
+    cout << "> setting the odemeter to 2400 (below the current value). " 
+        <<  "Should get error warning" << endl;
+    car2.setOdemeter(2400);
 
     return 0;
 }
