@@ -99,18 +99,22 @@ float automobileType::getEfficiency(){
   return efficiency; 
 }
 
-void refillTank(float fuelInput){
-  if(fuelInput > maxFuel){
-    cerr << "Invalid fuel input" << endl;
-    return
+void automobileType::refillTank(float fuelInput){
+  if(fuelInput <= 0){
+    cerr << "Error: Invalid fuel input. Permitted Range: > 0" << endl; 
+    return;
+  }
+  else if((fuel + fuelInput) > maxFuel){
+    cerr << "Error: fuel input exceeds tank capacity" << endl;
   }
   else{
-    fuel = fuelInput; 
+    fuel += fuelInput; 
   }
 }
 
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
+    float possibleDist; 
 
       //first do a 0 miles check
     if(milesTrav <= 0)
@@ -119,14 +123,25 @@ void automobileType::drive(float milesTrav){
      //do a formula to figure how many gallons we used 
      gallonsUsed = (1 / efficiency) * milesTrav; 
 
-      //if the fuel level goes below 0 then we're out of gas 
-    if((fuel - gallonsUsed) <= 0)
-        fuel = 0;
-    else
-        fuel -= gallonsUsed; //subtract gallons used from our fuel
+     //precalculate how many miles the car can drive 
+     possibleDist = fuel * efficiency; 
 
-    odemeter += milesTrav; //add this vechile has traveled to the odemeter
- 
+      //if the fuel level goes below 0 then we're out of gas 
+    if((fuel - gallonsUsed) <= 0){
+      cerr << "Error: Out of gas. Refill tank" << endl;
+      fuel = 0; 
+    }
+    else {
+      fuel -= gallonsUsed; //subtract gallons used from our fuel
+    }
+    if((odemeter + milesTrav) > possibleDist){
+      odemeter += possibleDist; 
+    }
+    else{
+      //add this vechile has traveled to the odemeter
+       odemeter += milesTrav;
+    }
+    
 }
 
 //default constructor
