@@ -100,12 +100,15 @@ float automobileType::getEfficiency(){
 }
 
 void automobileType::refillTank(float fuelInput){
-  if(fuelInput > maxFuel){
-    cerr << "Invalid fuel input" << endl;
+  if(fuelInput <= 0){
+    cerr << "Error: Invalid fuel input. Permitted Range: > 0" << endl; 
     return;
   }
+  else if((fuel + fuelInput) > maxFuel){
+    cerr << "Error: fuel input exceeds tank capacity" << endl;
+  }
   else{
-    fuel = fuelInput; 
+    fuel += fuelInput; 
   }
 }
 

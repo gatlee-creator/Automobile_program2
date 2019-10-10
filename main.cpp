@@ -68,7 +68,18 @@ int main()
     cout << "CAR 3: calling getEfficiency " << endl;
     cout << "Efficiency = " << car3.getEfficiency() << endl;
     cout << endl;
-    
+
+    cout << "CAR1: driving car1 150 miles " << endl;
+    car.drive(150); 
+    cout << car.getInfoString() << endl;
+
+    cout << "CAR1: refilling with gas +20" << endl;
+    car.refillTank(20);
+    cout << car.getInfoString() << endl;
+    cout << endl;
+
+    cout << "CAR2: attempting to refill pass its max capacity of 20" << endl;
+    car2.refillTank(20);
 
     return 0;
 }
