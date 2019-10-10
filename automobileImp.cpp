@@ -114,6 +114,7 @@ void automobileType::refillTank(float fuelInput){
 
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
+    float possibleDist; 
 
       //first do a 0 miles check
     if(milesTrav <= 0)
@@ -121,6 +122,9 @@ void automobileType::drive(float milesTrav){
     
      //do a formula to figure how many gallons we used 
      gallonsUsed = (1 / efficiency) * milesTrav; 
+
+     //precalculate how many miles the car can drive 
+     possibleDist = fuel * efficiency; 
 
       //if the fuel level goes below 0 then we're out of gas 
     if((fuel - gallonsUsed) <= 0){
@@ -130,9 +134,14 @@ void automobileType::drive(float milesTrav){
     else {
       fuel -= gallonsUsed; //subtract gallons used from our fuel
     }
-
-    odemeter += milesTrav; //add this vechile has traveled to the odemeter
- 
+    if((odemeter + milesTrav) > possibleDist){
+      odemeter += possibleDist; 
+    }
+    else{
+      //add this vechile has traveled to the odemeter
+       odemeter += milesTrav;
+    }
+    
 }
 
 //default constructor

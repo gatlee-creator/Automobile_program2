@@ -80,6 +80,14 @@ int main()
 
     cout << "CAR2: attempting to refill pass its max capacity of 20" << endl;
     car2.refillTank(20);
+    cout << endl;
+
+    cout << "CAR4: created car4 with a fuel range of 12 miles" << endl;
+    automobileType car4(1000, 6, 2, 10); 
+    cout << "CAR4: drives 13 miles (outside of its fuel range) "
+         << "Odemeter should ONLY increase by 12 miles" << endl;
+    car4.drive(13);
+    cout << car4.getInfoString() << endl; 
 
     return 0;
 }
