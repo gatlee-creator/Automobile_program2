@@ -1,3 +1,12 @@
+/*
+    Name: Graham Atlee
+    Course: csc1720
+    Location of Program: ~/csc1720/Programs/program2
+
+    This program contains driver code to test the full capabilites of
+    the automobileType class. There are 4 automobile objects created that
+    each test specific functions of the class. 
+*/
 #include "automobile.h"
 #include <iostream>
 
