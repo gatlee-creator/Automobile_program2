@@ -1,5 +1,12 @@
 /*
-    Header file for the automobileType class
+    Name: Graham Atlee
+    Course: csc1720
+    Location of Program: ~/csc1720/Programs/program2
+
+    Header file for the automobileType class. The code below 
+    contains function prototypes and variables relevant to 
+    the automobileType. Under each function contains further 
+    documentation. 
 */
 
 #include <string>
