@@ -30,9 +30,9 @@ int main(){
     car1.setProperties(-1200, -25, -30);
     cout << endl;
 
-    cout << "CAR 2: created parameterized constructor. "
-         << "A negative efficiency value will be passed in. "
-         << "Should be set to a default of 30" << endl;
+    cout << "CAR 2: created parameterized constructor." << endl;
+    cout << "A negative efficiency value will be passed in." << endl;
+    cout << "Should be set to a default of 30" << endl;
     automobileType car2(2500, 12, -20, 40);
     cout << car2.getInfoString() << endl; 
     cout << "CAR 2: car2 will be testing all of the seperate setFunctions" << endl;

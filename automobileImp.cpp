@@ -8,6 +8,9 @@
     Implementation of the automobileType class. Contains mostly 
     defenitions for the automobileType. Above each defenition is a brief
     description of the function.
+
+    Note: may see this warning upon compiling 
+      warning: in-class initialization of non-static data member is a C++11 extension
 */
 
 #include "automobile.h"
