@@ -1,6 +1,7 @@
 /*
     Name: Graham Atlee
     Course: csc1720
+    Date: 10/10/2019
     Location of Program: ~/csc1720/Programs/program2
 
     This program contains driver code to test the full capabilites of

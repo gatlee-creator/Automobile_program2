@@ -1,6 +1,7 @@
 /*
     Name: Graham Atlee
     Course: csc1720
+    Date: 10/10/2019
     Location of Program: ~/csc1720/Programs/program2
 
     Header file for the automobileType class. The code below 
