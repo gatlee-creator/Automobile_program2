@@ -15,6 +15,11 @@
 
 using namespace std;
 
+/*
+  Function takes a float parameter and uses it to set the fuel
+  Pre Condition:
+    fuelInput >= 0 or fuelInput < maxFuel
+*/
 int automobileType::setFuelLevel(float fuelInput){
    //check if fuel input is in acceptable values
   if((fuelInput > maxFuel) || (fuelInput < 0)){
@@ -27,6 +32,11 @@ int automobileType::setFuelLevel(float fuelInput){
   }
 }
 
+/*
+  Function takes a float parameter and uses it to set the efficiency
+  Pre Condition:
+    effoInput > 1
+*/
 int automobileType::setEfficiency(float effoInput){
   //check efficiency input is in range of acceptable values
   if(effoInput < 1){ 
@@ -38,7 +48,11 @@ int automobileType::setEfficiency(float effoInput){
     return 0;  
   }
 }
-
+/*
+  Function takes a float parameter and uses it to the set the odemeter 
+  Pre Condition:
+    odmtrInput > 0 or odmtrInput > odemeter 
+*/
 int automobileType::setOdemeter(float odmtrInput){
   //check odemeter input is in range of acceptable values 
   if((odmtrInput < odemeter) || (odmtrInput < 0)){ 
@@ -51,6 +65,13 @@ int automobileType::setOdemeter(float odmtrInput){
   }
 }
 
+/*
+  Function takes 3 float parameters to set odemeter, fuel, efficiency.
+  Pre Condition:
+    odmtrInput > 0 or odmtrInput > odemeter 
+    fuelInput >= 0 or fuelInput < maxFuel
+    effoInput > 1
+*/
 void automobileType::setProperties(float odmtrInput, float fuelInput, float effoInput){
   int FLAGS[3];
   const int INVALID = -1; 
@@ -84,6 +105,10 @@ void automobileType::setProperties(float odmtrInput, float fuelInput, float effo
 
 }
 
+/*
+  Function returns a string showing current values 
+  of odemeter, fuel, and efficiency
+*/
 string automobileType::getInfoString() const{
     string automobileStatus; 
     string fuelToString, odmtrToString, effoToString, maxToString; 
@@ -115,18 +140,26 @@ string automobileType::getInfoString() const{
     return automobileStatus;
 }
 
+//Function accesses and returns the odemeter value
 float automobileType::getOdemeter(){
   return odemeter; 
 }
 
+//Function accesses and returns the fuel value
 float automobileType::getFuelLevel(){
   return fuel;
 }
 
+//Function accesses and returns the efficiency value
 float automobileType::getEfficiency(){
   return efficiency; 
 }
 
+/*
+  Function to refill fuel by adding fuel and fuelInput together.
+  Pre Condition:
+    fuelInput > 0 or fuelInput < maxFuel 
+*/
 void automobileType::refillTank(float fuelInput){
   if(fuelInput <= 0){
     cerr << "Error: Invalid fuel input. Permitted Range: > 0" << endl; 
@@ -140,6 +173,12 @@ void automobileType::refillTank(float fuelInput){
   }
 }
 
+/*
+  Function takes a float parameter as indicator of # miles driven.
+  The function then calculates various outputs. 
+  Pre Condition:
+    milesTrav > 0 
+*/
 void automobileType::drive(float milesTrav){
     float gallonsUsed;
     float possibleDist; 
@@ -185,7 +224,15 @@ automobileType::automobileType(){
   maxFuel = DEFAULT_MAX_FUEL; 
 }
 
-//constructor that takes params 
+/*
+  Parameterized constructor that takes 3 float arguements to set the intial
+  state of object. 
+  Pre Condition:
+    odmtrInput > 0 or odmtrInput > odemeter 
+    fuelInput >= 0 or fuelInput < maxFuel
+    effoInput > 1
+
+*/
 automobileType::automobileType(float odmtrInput, float fuelInput, float effoInput, float maxFuelInput){
   const int INVALID = -1;
  
