@@ -39,8 +39,38 @@ int main(){
 
     cout << "CAR 3: created with parameterized constructor." << endl;
     automobileType car3(6000, 20, 10, 20); 
+    cout << car3.getInfoString() << endl;
     cout << "CAR 3: car3 will mainly be testing the drive and refill functions" << endl;
-    
+    cout << "> car3 will drive 150 miles. Odemeter should increase & fuel decrease" << endl; 
+    car3.drive(150);
+    cout << car3.getInfoString() << endl;
+    cout << "> attempting to drive -50 miles. Should get error warning" << endl;
+    car3.drive(-50);
+    cout << "> refilling the tank with 15 gallons (back to its max capacity)" << endl;
+    car3.refillTank(15);
+    cout << car3.getInfoString() << endl;
+    cout << "> attempting to fill above max capacity. Should get error warning." << endl;
+    car3.refillTank(10.5);
+    cout << "> driving with less fuel than needed to drive a specified distance (210 miles)." << endl;
+    cout << "Odemeter should ONLY increase by actual number of miles driven (200 miles)." << endl;
+    cout << "Expected Result: miles = 6350"<< endl;
+    car3.drive(210);
+    cout << car3.getInfoString() << endl;
+    cout << endl;
+
+    cout << "CAR 4: creating car4 with default constructor" << endl;
+    automobileType car4; 
+    cout << car4.getInfoString() << endl;
+    cout << "CAR 4: car4 will soley be testing each of the seperate getFunctions" << endl;
+    cout << "calling getOdemeter" << endl;
+    cout << car4.getOdemeter() << endl;
+    cout << "calling getFuelLevel" << endl;
+    cout << car4.getFuelLevel() << endl;
+    cout << "calling get efficiency" << endl;
+    cout << car4.getEfficiency() << endl;
+    cout << endl;
+
+    cout << "End of testing." << endl;
 
     return 0;
 }

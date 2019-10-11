@@ -138,8 +138,11 @@ void automobileType::drive(float milesTrav){
     float possibleDist; 
 
       //first do a 0 miles check
-    if(milesTrav <= 0)
-        return; 
+    if(milesTrav <= 0){
+      cerr << "Error: cannot drive negative miles." << endl;
+       return; 
+    }
+       
     //if fuel <= 0 then just exit immeaditley 
     
      //do a formula to figure how many gallons we used 
