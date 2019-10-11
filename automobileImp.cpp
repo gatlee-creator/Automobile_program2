@@ -1,7 +1,14 @@
 /*
-    Implementation of the automobileType class. Contains member variables
-    and member functions for the automobileType. 
+
+    Name: Graham Atlee
+    Course: csc1720
+    Location of Program: ~/csc1720/Programs/program2
+
+    Implementation of the automobileType class. Contains mostly 
+    defenitions for the automobileType. Above each defenition is a brief
+    description of the function.
 */
+
 #include "automobile.h"
 #include <string>
 #include <iostream>
